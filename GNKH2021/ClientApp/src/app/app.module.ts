@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
+import { MainComponent } from './main/main.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 
@@ -41,7 +42,8 @@ const config = {
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FetchDataComponent,
+    MainComponent
   ],
   imports: [
     OktaAuthModule,
@@ -50,6 +52,7 @@ const config = {
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, canActivate: [OktaAuthGuard] },
+      { path: 'main', component: MainComponent, canActivate: [OktaAuthGuard] },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent},
       {

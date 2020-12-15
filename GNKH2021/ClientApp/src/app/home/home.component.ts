@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { OktaAuthService } from '@okta/okta-angular';
@@ -6,6 +6,8 @@ import { OktaAuthService } from '@okta/okta-angular';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
+  styleUrls: ['./home.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent {
   public isAuthenticated: boolean;
